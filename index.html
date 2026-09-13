@@ -3,465 +3,994 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Atharva Pathak — Law × Technology × AI</title>
-<meta name="description" content="Atharva Pathak, law student exploring the intersection of artificial intelligence, technology, cybersecurity, and the legal systems that govern them.">
 
-<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='20' fill='%2323324A'/%3E%3Ctext x='50' y='68' font-size='58' font-family='Georgia, serif' fill='%23F5F3EE' text-anchor='middle'%3EA%3C/text%3E%3C/svg%3E">
+<title>Atharva Pathak — Law × Technology × AI</title>
+
+<meta
+  name="description"
+  content="Atharva Pathak, law student exploring the intersection of artificial intelligence, technology, cybersecurity, and the legal systems that govern them."
+>
+
+<link
+  rel="icon"
+  href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='20' fill='%2323324A'/%3E%3Ctext x='50' y='68' font-size='58' font-family='Georgia, serif' fill='%23F5F3EE' text-anchor='middle'%3EA%3C/text%3E%3C/svg%3E"
+>
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:opsz,wght@8..60,400;8..60,500;8..60,600&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+
+<link
+  href="https://fonts.googleapis.com/css2?family=Source+Serif+4:opsz,wght@8..60,400;8..60,500;8..60,600&family=Inter:wght@400;500;600&display=swap"
+  rel="stylesheet"
+>
 
 <style>
-  :root{
-    --paper:#F5F3EE;
-    --paper-raised:#EFECE4;
-    --ink:#1B1E22;
-    --ink-soft:#5B5E63;
-    --line:#DAD5C9;
-    --accent:#23324A;
-    --accent-soft:#4C5F7A;
-    --focus:#8A6D3B;
-    --radius:2px;
-  }
 
-  html[data-theme="dark"]{
-    --paper:#14161A;
-    --paper-raised:#1B1E24;
-    --ink:#EDEAE2;
-    --ink-soft:#9CA0A6;
-    --line:#33363D;
-    --accent:#D8CBAA;
-    --accent-soft:#B9A87C;
-    --focus:#D8CBAA;
-  }
+:root{
+  --paper:#F5F3EE;
+  --paper-raised:#EFECE4;
+  --ink:#1B1E22;
+  --ink-soft:#5B5E63;
+  --line:#DAD5C9;
+  --accent:#23324A;
+  --accent-soft:#4C5F7A;
+  --focus:#8A6D3B;
+  --radius:2px;
+}
 
-  *{box-sizing:border-box;}
-  html{scroll-behavior:smooth;}
+html[data-theme="dark"]{
+  --paper:#14161A;
+  --paper-raised:#1B1E24;
+  --ink:#EDEAE2;
+  --ink-soft:#9CA0A6;
+  --line:#33363D;
+  --accent:#D8CBAA;
+  --accent-soft:#B9A87C;
+  --focus:#D8CBAA;
+}
 
-  body{
-    margin:0;
-    background:var(--paper);
-    color:var(--ink);
-    font-family:'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
-    -webkit-font-smoothing:antialiased;
-    transition:background .4s ease, color .4s ease;
-    line-height:1.6;
-  }
+*{
+  box-sizing:border-box;
+}
 
-  ::selection{ background:var(--accent); color:var(--paper); }
+html{
+  scroll-behavior:smooth;
+}
 
-  a{ color:inherit; text-decoration:none; }
+body{
+  margin:0;
+  background:var(--paper);
+  color:var(--ink);
+  font-family:'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+  -webkit-font-smoothing:antialiased;
+  transition:background .4s ease, color .4s ease;
+  line-height:1.6;
+}
 
-  :focus-visible{
-    outline:2px solid var(--focus);
-    outline-offset:3px;
-  }
+::selection{
+  background:var(--accent);
+  color:var(--paper);
+}
 
-  .serif{ font-family:'Source Serif 4', Georgia, serif; }
+a{
+  color:inherit;
+  text-decoration:none;
+}
 
-  .wrap{
-    max-width:720px;
-    margin:0 auto;
-    padding:0 28px;
-  }
+:focus-visible{
+  outline:2px solid var(--focus);
+  outline-offset:3px;
+}
 
-  /* ---------- NAV ---------- */
-  header{
-    position:fixed;
-    top:0; left:0; right:0;
-    z-index:50;
-    background:color-mix(in srgb, var(--paper) 88%, transparent);
-    backdrop-filter:saturate(140%) blur(10px);
-    border-bottom:1px solid transparent;
-    transition:border-color .3s ease, background .4s ease;
-  }
-  header.scrolled{ border-bottom-color:var(--line); }
+.serif{
+  font-family:'Source Serif 4', Georgia, serif;
+}
 
-  nav{
-    max-width:720px;
-    margin:0 auto;
-    padding:18px 28px;
-    display:flex;
-    align-items:center;
-    justify-content:space-between;
-  }
+.wrap{
+  max-width:720px;
+  margin:0 auto;
+  padding:0 28px;
+}
 
-  .brand{
-    font-family:'Source Serif 4', Georgia, serif;
-    font-size:1.05rem;
-    letter-spacing:0.01em;
-  }
 
+/* ---------- NAV ---------- */
+
+header{
+  position:fixed;
+  top:0;
+  left:0;
+  right:0;
+  z-index:50;
+  background:color-mix(in srgb, var(--paper) 88%, transparent);
+  backdrop-filter:saturate(140%) blur(10px);
+  border-bottom:1px solid transparent;
+  transition:border-color .3s ease, background .4s ease;
+}
+
+header.scrolled{
+  border-bottom-color:var(--line);
+}
+
+nav{
+  max-width:720px;
+  margin:0 auto;
+  padding:18px 28px;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+}
+
+.brand{
+  font-family:'Source Serif 4', Georgia, serif;
+  font-size:1.05rem;
+  letter-spacing:0.01em;
+}
+
+.nav-links{
+  display:flex;
+  gap:28px;
+  list-style:none;
+  margin:0;
+  padding:0;
+}
+
+.nav-links a{
+  font-size:0.92rem;
+  color:var(--ink-soft);
+  position:relative;
+  padding-bottom:2px;
+}
+
+.nav-links a::after{
+  content:"";
+  position:absolute;
+  left:0;
+  bottom:-2px;
+  width:0;
+  height:1px;
+  background:var(--ink);
+  transition:width .25s ease;
+}
+
+.nav-links a:hover{
+  color:var(--ink);
+}
+
+.nav-links a:hover::after{
+  width:100%;
+}
+
+.theme-toggle{
+  border:1px solid var(--line);
+  background:none;
+  color:var(--ink-soft);
+  width:34px;
+  height:34px;
+  border-radius:50%;
+  cursor:pointer;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  transition:border-color .2s ease, color .2s ease, transform .2s ease;
+}
+
+.theme-toggle:hover{
+  border-color:var(--ink);
+  color:var(--ink);
+}
+
+.theme-toggle svg{
+  width:16px;
+  height:16px;
+}
+
+.nav-links{
+  display:none;
+}
+
+@media (min-width:640px){
   .nav-links{
     display:flex;
-    gap:28px;
-    list-style:none;
-    margin:0; padding:0;
   }
+}
 
-  .nav-links a{
-    font-size:0.92rem;
-    color:var(--ink-soft);
-    position:relative;
-    padding-bottom:2px;
+
+/* ---------- HERO ---------- */
+
+.hero{
+  min-height:100vh;
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+  padding-top:80px;
+  opacity:0;
+  transform:translateY(14px);
+  animation:rise .9s cubic-bezier(.2,.7,.2,1) .15s forwards;
+}
+
+@keyframes rise{
+  to{
+    opacity:1;
+    transform:translateY(0);
   }
-  .nav-links a::after{
-    content:"";
-    position:absolute;
-    left:0; bottom:-2px;
-    width:0; height:1px;
-    background:var(--ink);
-    transition:width .25s ease;
-  }
-  .nav-links a:hover{ color:var(--ink); }
-  .nav-links a:hover::after{ width:100%; }
+}
 
-  .theme-toggle{
-    border:1px solid var(--line);
-    background:none;
-    color:var(--ink-soft);
-    width:34px; height:34px;
-    border-radius:50%;
-    cursor:pointer;
-    display:flex;
-    align-items:center;
-    justify-content:center;
-    transition:border-color .2s ease, color .2s ease, transform .2s ease;
-  }
-  .theme-toggle:hover{ border-color:var(--ink); color:var(--ink); }
-  .theme-toggle svg{ width:16px; height:16px; }
+.eyebrow{
+  font-size:0.85rem;
+  color:var(--accent-soft);
+  margin-bottom:18px;
+}
 
-  .nav-links{ display:none; }
-  @media (min-width:640px){ .nav-links{ display:flex; } }
+.hero h1{
+  font-family:'Source Serif 4', Georgia, serif;
+  font-weight:500;
+  font-size:clamp(2.6rem, 7vw, 4.4rem);
+  line-height:1.05;
+  margin:0 0 20px 0;
+  letter-spacing:-0.01em;
+}
 
-  /* ---------- HERO ---------- */
-  .hero{
-    min-height:100vh;
-    display:flex;
-    flex-direction:column;
-    justify-content:center;
-    padding-top:80px;
-    opacity:0;
-    transform:translateY(14px);
-    animation:rise .9s cubic-bezier(.2,.7,.2,1) .15s forwards;
-  }
+.hero .tagline{
+  font-size:1.15rem;
+  color:var(--ink-soft);
+  margin:0 0 26px 0;
+}
 
-  @keyframes rise{ to{ opacity:1; transform:translateY(0); } }
+.hero p.intro{
+  max-width:52ch;
+  font-size:1.05rem;
+  color:var(--ink-soft);
+  margin:0 0 36px 0;
+}
 
-  .eyebrow{
-    font-size:0.85rem;
-    color:var(--accent-soft);
-    margin-bottom:18px;
-  }
+.btn-row{
+  display:flex;
+  gap:16px;
+  flex-wrap:wrap;
+}
 
-  .hero h1{
-    font-family:'Source Serif 4', Georgia, serif;
-    font-weight:500;
-    font-size:clamp(2.6rem, 7vw, 4.4rem);
-    line-height:1.05;
-    margin:0 0 20px 0;
-    letter-spacing:-0.01em;
-  }
+.btn{
+  display:inline-block;
+  padding:12px 22px;
+  font-size:0.95rem;
+  border-radius:var(--radius);
+  border:1px solid var(--ink);
+  transition:background .2s ease, color .2s ease, transform .2s ease;
+}
 
-  .hero .tagline{
-    font-size:1.15rem;
-    color:var(--ink-soft);
-    margin:0 0 26px 0;
-  }
+.btn.primary{
+  background:var(--ink);
+  color:var(--paper);
+}
 
-  .hero p.intro{
-    max-width:52ch;
-    font-size:1.05rem;
-    color:var(--ink-soft);
-    margin:0 0 36px 0;
-  }
+.btn.primary:hover{
+  transform:translateY(-2px);
+}
 
-  .btn-row{ display:flex; gap:16px; flex-wrap:wrap; }
+.btn.ghost{
+  color:var(--ink);
+}
 
-  .btn{
-    display:inline-block;
-    padding:12px 22px;
-    font-size:0.95rem;
-    border-radius:var(--radius);
-    border:1px solid var(--ink);
-    transition:background .2s ease, color .2s ease, transform .2s ease;
-  }
-  .btn.primary{ background:var(--ink); color:var(--paper); }
-  .btn.primary:hover{ transform:translateY(-2px); }
-  .btn.ghost{ color:var(--ink); }
-  .btn.ghost:hover{ background:var(--ink); color:var(--paper); }
+.btn.ghost:hover{
+  background:var(--ink);
+  color:var(--paper);
+}
 
-  /* ---------- SECTIONS ---------- */
-  section{
-    padding:96px 0;
-    border-top:1px solid var(--line);
-  }
 
-  .kicker{
-    font-size:0.85rem;
-    color:var(--ink-soft);
-    margin:0 0 10px 0;
-  }
+/* ---------- SECTIONS ---------- */
 
-  h2{
-    font-family:'Source Serif 4', Georgia, serif;
-    font-weight:500;
-    font-size:clamp(1.7rem, 4vw, 2.2rem);
-    margin:0 0 28px 0;
-  }
+section{
+  padding:96px 0;
+  border-top:1px solid var(--line);
+}
 
-  .about p{
-    font-size:1.05rem;
-    color:var(--ink-soft);
-    max-width:58ch;
-  }
+.kicker{
+  font-size:0.85rem;
+  color:var(--ink-soft);
+  margin:0 0 10px 0;
+}
 
-  /* interests */
+h2{
+  font-family:'Source Serif 4', Georgia, serif;
+  font-weight:500;
+  font-size:clamp(1.7rem, 4vw, 2.2rem);
+  margin:0 0 28px 0;
+}
+
+.about p{
+  font-size:1.05rem;
+  color:var(--ink-soft);
+  max-width:58ch;
+}
+
+
+/* ---------- INTERESTS ---------- */
+
+.interest-list{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  border-top:1px solid var(--line);
+}
+
+@media (max-width:520px){
   .interest-list{
-    display:grid;
-    grid-template-columns:1fr 1fr;
-    border-top:1px solid var(--line);
+    grid-template-columns:1fr;
   }
-  @media (max-width:520px){ .interest-list{ grid-template-columns:1fr; } }
+}
 
-  .interest-item{
-    padding:18px 4px;
-    border-bottom:1px solid var(--line);
-    font-size:1.02rem;
-    display:flex;
-    align-items:center;
-  }
-  .interest-item:nth-child(odd){ border-right:1px solid var(--line); padding-right:20px; }
-  .interest-item:nth-child(even){ padding-left:20px; }
-  @media (max-width:520px){
-    .interest-item:nth-child(odd){ border-right:none; padding-right:4px; }
-    .interest-item:nth-child(even){ padding-left:4px; }
-  }
+.interest-item{
+  padding:18px 4px;
+  border-bottom:1px solid var(--line);
+  font-size:1.02rem;
+  display:flex;
+  align-items:center;
+}
 
-  /* projects */
-  .project{
-    padding:32px 0;
-    border-bottom:1px solid var(--line);
-    display:flex;
-    flex-direction:column;
-    gap:10px;
-  }
-  .project:first-of-type{ padding-top:0; }
-  .project:last-of-type{ border-bottom:none; }
+.interest-item:nth-child(odd){
+  border-right:1px solid var(--line);
+  padding-right:20px;
+}
 
-  .project h3{
-    font-family:'Source Serif 4', Georgia, serif;
-    font-weight:500;
-    font-size:1.3rem;
-    margin:0;
-  }
-  .project p{
-    color:var(--ink-soft);
-    margin:0;
-    max-width:56ch;
-    font-size:0.98rem;
-  }
-  .project a.link{
-    display:inline-flex;
-    align-items:center;
-    gap:6px;
-    font-size:0.92rem;
-    color:var(--accent-soft);
-    width:fit-content;
-    padding-bottom:1px;
-    border-bottom:1px solid transparent;
-    transition:border-color .2s ease, color .2s ease;
-  }
-  .project a.link:hover{ color:var(--ink); border-color:var(--ink); }
+.interest-item:nth-child(even){
+  padding-left:20px;
+}
 
-  /* contact */
-  .contact-grid{
-    display:flex;
-    flex-direction:column;
-    gap:14px;
-  }
-  .contact-row{
-    display:flex;
-    justify-content:space-between;
-    align-items:baseline;
-    padding:14px 0;
-    border-bottom:1px solid var(--line);
-    gap:16px;
-  }
-  .contact-row:last-child{ border-bottom:none; }
-  .contact-label{ color:var(--ink-soft); font-size:0.9rem; }
-  .contact-value{
-    font-size:1rem;
-    text-align:right;
-    border-bottom:1px solid transparent;
-    transition:border-color .2s ease, color .2s ease;
-  }
-  .contact-row a.contact-value:hover{ border-color:var(--ink); }
+@media (max-width:520px){
 
-  footer{
-    padding:40px 0 60px 0;
-    border-top:1px solid var(--line);
-    display:flex;
-    justify-content:space-between;
-    flex-wrap:wrap;
-    gap:8px;
-    color:var(--ink-soft);
-    font-size:0.88rem;
+  .interest-item:nth-child(odd){
+    border-right:none;
+    padding-right:4px;
   }
 
-  @media (prefers-reduced-motion: reduce){
-    html{ scroll-behavior:auto; }
-    .hero{ animation:none; opacity:1; transform:none; }
-    *{ transition-duration:0.001ms !important; animation-duration:0.001ms !important; }
+  .interest-item:nth-child(even){
+    padding-left:4px;
   }
+
+}
+
+
+/* ---------- PROJECTS ---------- */
+
+.project{
+  padding:32px 0;
+  border-bottom:1px solid var(--line);
+  display:flex;
+  flex-direction:column;
+  gap:10px;
+}
+
+.project:first-of-type{
+  padding-top:0;
+}
+
+.project:last-of-type{
+  border-bottom:none;
+}
+
+.project h3{
+  font-family:'Source Serif 4', Georgia, serif;
+  font-weight:500;
+  font-size:1.3rem;
+  margin:0;
+}
+
+.project p{
+  color:var(--ink-soft);
+  margin:0;
+  max-width:56ch;
+  font-size:0.98rem;
+}
+
+.project a.link{
+  display:inline-flex;
+  align-items:center;
+  gap:6px;
+  font-size:0.92rem;
+  color:var(--accent-soft);
+  width:fit-content;
+  padding-bottom:1px;
+  border-bottom:1px solid transparent;
+  transition:border-color .2s ease, color .2s ease;
+}
+
+.project a.link:hover{
+  color:var(--ink);
+  border-color:var(--ink);
+}
+
+
+/* ---------- CONTACT ---------- */
+
+.contact-grid{
+  display:flex;
+  flex-direction:column;
+  gap:14px;
+}
+
+.contact-row{
+  display:flex;
+  justify-content:space-between;
+  align-items:baseline;
+  padding:14px 0;
+  border-bottom:1px solid var(--line);
+  gap:16px;
+}
+
+.contact-row:last-child{
+  border-bottom:none;
+}
+
+.contact-label{
+  color:var(--ink-soft);
+  font-size:0.9rem;
+}
+
+.contact-value{
+  font-size:1rem;
+  text-align:right;
+  border-bottom:1px solid transparent;
+  transition:border-color .2s ease, color .2s ease;
+}
+
+.contact-row a.contact-value:hover{
+  border-color:var(--ink);
+}
+
+
+/* ---------- FOOTER ---------- */
+
+footer{
+  padding:40px 0 60px 0;
+  border-top:1px solid var(--line);
+  display:flex;
+  justify-content:space-between;
+  flex-wrap:wrap;
+  gap:8px;
+  color:var(--ink-soft);
+  font-size:0.88rem;
+}
+
+
+/* ---------- REDUCED MOTION ---------- */
+
+@media (prefers-reduced-motion: reduce){
+
+  html{
+    scroll-behavior:auto;
+  }
+
+  .hero{
+    animation:none;
+    opacity:1;
+    transform:none;
+  }
+
+  *{
+    transition-duration:0.001ms !important;
+    animation-duration:0.001ms !important;
+  }
+
+}
+
 </style>
 </head>
+
 <body>
 
 <header id="site-header">
+
   <nav>
-    <a href="#top" class="brand serif">Atharva Pathak</a>
+
+    <a href="#top" class="brand serif">
+      Atharva Pathak
+    </a>
+
     <ul class="nav-links">
-      <li><a href="#about">About</a></li>
-      <li><a href="#interests">Interests</a></li>
-      <li><a href="#projects">Projects</a></li>
-      <li><a href="#contact">Contact</a></li>
+
+      <li>
+        <a href="#about">About</a>
+      </li>
+
+      <li>
+        <a href="#interests">Interests</a>
+      </li>
+
+      <li>
+        <a href="#projects">Projects</a>
+      </li>
+
+      <li>
+        <a href="#contact">Contact</a>
+      </li>
+
     </ul>
-    <button class="theme-toggle" id="theme-toggle" aria-label="Toggle dark mode">
-      <svg id="theme-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6">
-        <circle cx="12" cy="12" r="4.2"></circle>
-        <line x1="12" y1="1.5" x2="12" y2="4"></line>
-        <line x1="12" y1="20" x2="12" y2="22.5"></line>
-        <line x1="4.2" y1="4.2" x2="6" y2="6"></line>
-        <line x1="18" y1="18" x2="19.8" y2="19.8"></line>
-        <line x1="1.5" y1="12" x2="4" y2="12"></line>
-        <line x1="20" y1="12" x2="22.5" y2="12"></line>
-        <line x1="4.2" y1="19.8" x2="6" y2="18"></line>
-        <line x1="18" y1="6" x2="19.8" y2="4.2"></line>
+
+    <button
+      class="theme-toggle"
+      id="theme-toggle"
+      aria-label="Toggle dark mode"
+    >
+
+      <svg
+        id="theme-icon"
+        viewBox="0 0 24 24"
+        fill="none"
+        stroke="currentColor"
+        stroke-width="1.6"
+      >
+
+        <circle
+          cx="12"
+          cy="12"
+          r="4.2"
+        ></circle>
+
+        <line
+          x1="12"
+          y1="1.5"
+          x2="12"
+          y2="4"
+        ></line>
+
+        <line
+          x1="12"
+          y1="20"
+          x2="12"
+          y2="22.5"
+        ></line>
+
+        <line
+          x1="4.2"
+          y1="4.2"
+          x2="6"
+          y2="6"
+        ></line>
+
+        <line
+          x1="18"
+          y1="18"
+          x2="19.8"
+          y2="19.8"
+        ></line>
+
+        <line
+          x1="1.5"
+          y1="12"
+          x2="4"
+          y2="12"
+        ></line>
+
+        <line
+          x1="20"
+          y1="12"
+          x2="22.5"
+          y2="12"
+        ></line>
+
+        <line
+          x1="4.2"
+          y1="19.8"
+          x2="6"
+          y2="18"
+        ></line>
+
+        <line
+          x1="18"
+          y1="6"
+          x2="19.8"
+          y2="4.2"
+        ></line>
+
       </svg>
+
     </button>
+
   </nav>
+
 </header>
+
 
 <main class="wrap" id="top">
 
-  <section class="hero" style="border-top:none; padding-bottom:60px;">
-    <p class="eyebrow">Law · Technology · AI</p>
-    <h1>Atharva Pathak</h1>
-    <p class="tagline">Law × Technology × AI</p>
-    <p class="intro">Law student exploring the intersection of artificial intelligence, technology, cybersecurity, and the legal systems that govern them.</p>
+
+  <!-- HERO -->
+
+  <section
+    class="hero"
+    style="border-top:none; padding-bottom:60px;"
+  >
+
+    <p class="eyebrow">
+      Law · Technology · AI
+    </p>
+
+    <h1>
+      Atharva Pathak
+    </h1>
+
+    <p class="tagline">
+      Law × Technology × AI
+    </p>
+
+    <p class="intro">
+      Law student exploring the intersection of artificial intelligence,
+      technology, cybersecurity, and the legal systems that govern them.
+    </p>
+
     <div class="btn-row">
-      <a href="#about" class="btn primary">About Me</a>
-      <a href="#contact" class="btn ghost">Contact</a>
+
+      <a href="#about" class="btn primary">
+        About Me
+      </a>
+
+      <a href="#contact" class="btn ghost">
+        Contact
+      </a>
+
     </div>
+
   </section>
+
+
+  <!-- ABOUT -->
 
   <section id="about" class="about">
-    <p class="kicker">01</p>
-    <h2>About Me</h2>
-    <p>I am a law student with a background and interest in technology. My interests lie at the intersection of law and emerging technologies, particularly artificial intelligence, cybersecurity, privacy, and digital systems.</p>
+
+    <p class="kicker">
+      01
+    </p>
+
+    <h2>
+      About Me
+    </h2>
+
+    <p>
+      I am a law student with a background and interest in technology.
+      My interests lie at the intersection of law and emerging technologies,
+      particularly artificial intelligence, cybersecurity, privacy, and
+      digital systems.
+    </p>
+
   </section>
+
+
+  <!-- INTERESTS -->
 
   <section id="interests">
-    <p class="kicker">02</p>
-    <h2>Areas of Interest</h2>
+
+    <p class="kicker">
+      02
+    </p>
+
+    <h2>
+      Areas of Interest
+    </h2>
+
     <div class="interest-list">
-      <div class="interest-item">Artificial Intelligence</div>
-      <div class="interest-item">Technology Law</div>
-      <div class="interest-item">Cyber Law</div>
-      <div class="interest-item">Cybersecurity</div>
-      <div class="interest-item">Data Protection &amp; Privacy</div>
-      <div class="interest-item">AI Regulation</div>
-      <div class="interest-item">Digital Evidence</div>
-      <div class="interest-item">Emerging Technologies</div>
+
+      <div class="interest-item">
+        Artificial Intelligence
+      </div>
+
+      <div class="interest-item">
+        Technology Law
+      </div>
+
+      <div class="interest-item">
+        Cyber Law
+      </div>
+
+      <div class="interest-item">
+        Cybersecurity
+      </div>
+
+      <div class="interest-item">
+        Data Protection &amp; Privacy
+      </div>
+
+      <div class="interest-item">
+        AI Regulation
+      </div>
+
+      <div class="interest-item">
+        Digital Evidence
+      </div>
+
+      <div class="interest-item">
+        Emerging Technologies
+      </div>
+
     </div>
+
   </section>
+
+
+  <!-- PROJECTS -->
 
   <section id="projects">
-    <p class="kicker">03</p>
-    <h2>Selected Projects</h2>
+
+    <p class="kicker">
+      03
+    </p>
+
+    <h2>
+      Selected Projects
+    </h2>
+
 
     <div class="project">
-      <h3 class="serif">TruthLens.AI</h3>
-      <p>An AI-powered deepfake detection Android application designed to help identify manipulated images.</p>
-      <a class="link" href="https://truthlensai.in/" target="_blank" rel="noopener noreferrer">View Project →</a>
+
+      <h3 class="serif">
+        TruthLens.AI
+      </h3>
+
+      <p>
+        An AI-powered deepfake detection Android application designed
+        to help identify manipulated images.
+      </p>
+
+      <a
+        class="link"
+        href="https://truthlensai.in/"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        View Project →
+      </a>
+
     </div>
 
-    <div class="project">
-      <h3 class="serif">Hidden Prompt Injection Detector</h3>
-      <p>A browser-based security research project focused on detecting hidden prompt injections on webpages.</p>
-      <a class="link" href="https://github.com/athaxva/hidden-prompt-injection-detector" target="_blank" rel="noopener noreferrer">View on GitHub →</a>
-    </div>
 
     <div class="project">
-      <h3 class="serif">FormSense AI</h3>
-      <p>An experimental AI project exploring intelligent question understanding and automated form assistance.</p>
-      <a class="link" href="https://github.com/athaxva" target="_blank" rel="noopener noreferrer">GitHub →</a>
+
+      <h3 class="serif">
+        Hidden Prompt Injection Detector
+      </h3>
+
+      <p>
+        A browser-based security research project focused on detecting
+        hidden prompt injections on webpages.
+      </p>
+
+      <a
+        class="link"
+        href="https://github.com/athaxva/hidden-prompt-injection-detector"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        View on GitHub →
+      </a>
+
     </div>
+
+
+    <div class="project">
+
+      <h3 class="serif">
+        FormSense AI
+      </h3>
+
+      <p>
+        An experimental AI project exploring intelligent question
+        understanding and automated form assistance.
+      </p>
+
+      <a
+        class="link"
+        href="https://github.com/athaxva"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        GitHub →
+      </a>
+
+    </div>
+
   </section>
+
+
+  <!-- CONTACT -->
 
   <section id="contact">
-    <p class="kicker">04</p>
-    <h2>Contact</h2>
+
+    <p class="kicker">
+      04
+    </p>
+
+    <h2>
+      Contact
+    </h2>
+
     <div class="contact-grid">
+
+
       <div class="contact-row">
-        <span class="contact-label">Email</span>
-        <a class="contact-value" href="mailto:atharva@atharvapathak.in">atharva@atharvapathak.in</a>
+
+        <span class="contact-label">
+          Email
+        </span>
+
+        <a
+          class="contact-value"
+          href="mailto:atharva@atharvapathak.in"
+        >
+          atharva@atharvapathak.in
+        </a>
+
       </div>
+
+
       <div class="contact-row">
-        <span class="contact-label">GitHub</span>
-        <a class="contact-value" href="https://github.com/athaxva" target="_blank" rel="noopener noreferrer">github.com/athaxva</a>
+
+        <span class="contact-label">
+          GitHub
+        </span>
+
+        <a
+          class="contact-value"
+          href="https://github.com/athaxva"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          github.com/athaxva
+        </a>
+
       </div>
+
+
       <div class="contact-row">
-        <span class="contact-label">LinkedIn</span>
-        <a class="contact-value" href="https://linkedin.com/in/atharvappathak" target="_blank" rel="noopener noreferrer">linkedin.com/in/atharvappathak</a>
+
+        <span class="contact-label">
+          LinkedIn
+        </span>
+
+        <a
+          class="contact-value"
+          href="https://linkedin.com/in/atharvappathak"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          linkedin.com/in/atharvappathak
+        </a>
+
       </div>
+
+
       <div class="contact-row">
-        <span class="contact-label">ORCID</span>
-        <a class="contact-value" href="https://orcid.org/0009-0004-7418-5834" target="_blank" rel="noopener noreferrer">0009-0004-7418-5834</a>
+
+        <span class="contact-label">
+          ORCID
+        </span>
+
+        <a
+          class="contact-value"
+          href="https://orcid.org/0009-0004-7418-5834"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          0009-0004-7418-5834
+        </a>
+
       </div>
+
+
       <div class="contact-row">
-        <span class="contact-label">Blog</span>
-        <a class="contact-value" href="https://blog.atharvapathak.in/" target="_blank" rel="noopener noreferrer">blog.atharvapathak.in</a>
+
+        <span class="contact-label">
+          Blog
+        </span>
+
+        <a
+          class="contact-value"
+          href="https://blog.atharvapathak.in/"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          blog.atharvapathak.in
+        </a>
+
       </div>
+
+
     </div>
+
   </section>
 
+
+  <!-- FOOTER -->
+
   <footer>
-    <span>© <span id="year"></span> Atharva Pathak</span>
-    <span>Law × Technology × AI</span>
+
+    <span>
+      © <span id="year"></span> Atharva Pathak
+    </span>
+
+    <span>
+      Law × Technology × AI
+    </span>
+
   </footer>
+
 
 </main>
 
+
 <script>
-  // Header shadow/border on scroll
-  const header = document.getElementById('site-header');
-  window.addEventListener('scroll', () => {
-    header.classList.toggle('scrolled', window.scrollY > 8);
-  });
 
-  // Footer year
-  document.getElementById('year').textContent = new Date().getFullYear();
 
-  // Theme toggle (light/dark), persisted
-  const root = document.documentElement;
-  const toggleBtn = document.getElementById('theme-toggle');
-  const stored = localStorage.getItem('theme');
-  const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+// Header shadow/border on scroll
 
-  function applyTheme(theme){
-    root.setAttribute('data-theme', theme);
-    localStorage.setItem('theme', theme);
+const header = document.getElementById('site-header');
+
+window.addEventListener('scroll', () => {
+
+  header.classList.toggle(
+    'scrolled',
+    window.scrollY > 8
+  );
+
+});
+
+
+// Footer year
+
+document.getElementById('year').textContent =
+  new Date().getFullYear();
+
+
+// Theme toggle
+
+const root = document.documentElement;
+
+const toggleBtn =
+  document.getElementById('theme-toggle');
+
+const stored =
+  localStorage.getItem('theme');
+
+const prefersDark =
+  window.matchMedia(
+    '(prefers-color-scheme: dark)'
+  ).matches;
+
+
+function applyTheme(theme){
+
+  root.setAttribute(
+    'data-theme',
+    theme
+  );
+
+  localStorage.setItem(
+    'theme',
+    theme
+  );
+
+}
+
+
+applyTheme(
+  stored ||
+  (prefersDark ? 'dark' : 'light')
+);
+
+
+toggleBtn.addEventListener(
+  'click',
+  () => {
+
+    const current =
+      root.getAttribute('data-theme');
+
+    applyTheme(
+      current === 'dark'
+        ? 'light'
+        : 'dark'
+    );
+
   }
+);
 
-  applyTheme(stored || (prefersDark ? 'dark' : 'light'));
-
-  toggleBtn.addEventListener('click', () => {
-    const current = root.getAttribute('data-theme');
-    applyTheme(current === 'dark' ? 'light' : 'dark');
-  });
 </script>
 
 </body>
